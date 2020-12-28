@@ -1,0 +1,488 @@
+ Which of these keyword must be used to inherit a class?
+a) super
+b) this
+c) extent
+d) extends
+View Answer
+
+Answer: d
+Explanation: None.
+
+
+
+ A class member declared protected becomes member of subclass of which type?
+a) public member
+b) private member
+c) protected member
+d) static member
+View Answer
+
+Answer: b
+Explanation: A class member declared protected becomes private member of subclass.
+
+
+
+
+
+ Which two classes use the Shape class correctly? (Choose two.)
+
+A. public class Circle implements Shape 
+   {
+    private int radius;
+   }
+B. public abstract class Circle extends Shape 
+   {
+    private int radius;
+   }
+C. public class Circle extends Shape 
+   {
+   private int radius;
+   public void draw();
+   }
+D. public abstract class Circle implements Shape 
+   {
+    private int radius;
+    public void draw();
+   }
+E. public class Circle extends Shape 
+   {
+    private int radius;
+    public void draw()
+    {
+     /* code here */
+    }
+   }
+F. public abstract class Circle implements Shape 
+   {
+     private int radius;
+     public void draw() 
+     { 
+      /* code here */ 
+     }
+   }
+a) B,E
+b) A,C
+c) C,E
+d) T,H
+View Answer
+
+Answer: a
+Explanation: If one is extending any class, then they should use extends keyword not implements.
+
+
+
+
+
+
+
+ What is the output of this program?
+
+    class A {
+        int i;
+        void display() {
+            System.out.println(i);
+        }
+    }    
+    class B extends A {
+        int j;
+        void display() {
+            System.out.println(j);
+        }
+    }    
+    class inheritance_demo {
+        public static void main(String args[])
+        {
+            B obj = new B();
+            obj.i=1;
+            obj.j=2;   
+            obj.display();     
+        }
+   }
+a) 0
+b) 1
+c) 2
+d) Compilation Error
+View Answer
+
+Answer: c
+Explanation: class A & class B both contain display() method, class B inherits class A, when display() method is called by object of class B, display() method of class B is executed rather than that of Class A.
+output:
+$ javac inheritance_demo.java
+$ java inheritance_demo
+2
+
+
+
+
+
+
+
+
+
+
+What is the output of this program?
+
+    class A {
+        int i;
+    }    
+    class B extends A {
+        int j;
+        void display() {
+            super.i = j + 1;
+            System.out.println(j + " " + i);
+        }
+    }    
+    class inheritance {
+        public static void main(String args[])
+        {
+            B obj = new B();
+            obj.i=1;
+            obj.j=2;   
+            obj.display();     
+        }
+   }
+a) 2 2
+b) 3 3
+c) 2 3
+d) 3 2
+View Answer
+
+Answer: c
+Explanation: None
+output:
+$ javac inheritance.java
+$ java inheritance
+2 3
+
+
+
+
+
+
+
+ What is the output of this program?
+
+    class A {
+        public int i;
+        public int j;
+        A() {
+            i = 1;
+            j = 2;
+	}
+    }    
+    class B extends A {
+        int a;
+        B() {
+            super();
+        } 
+    }    
+    class super_use {
+        public static void main(String args[])
+        {
+            B obj = new B();
+            System.out.println(obj.i + " " + obj.j)     
+        }
+   }
+a) 1 2
+b) 2 1
+c) Runtime Error
+d) Compilation Error
+View Answer
+
+Answer: a
+Explanation: Keyword super is used to call constructor of class A by constructor of class B. Constructor of a initializes i & j to 1 & 2 respectively.
+output:
+$ javac super_use.java
+$ java super_use
+1 2
+
+
+
+
+
+
+
+What is the output of this program?
+
+    class A {
+        public int i;
+        protected int j;
+    }    
+    class B extends A {
+        int j;
+        void display() {
+            super.j = 3;
+            System.out.println(i + " " + j);
+        }
+    }    
+    class Output {
+        public static void main(String args[])
+        {
+            B obj = new B();
+            obj.i=1;
+            obj.j=2;   
+            obj.display();     
+        }
+   }
+a) 1 2
+b) 2 1
+c) 1 3
+d) 3 1
+View Answer
+
+Answer: a
+Explanation: Both class A & B have member with same name that is j, member of class B will be called by default if no specifier is used. I contains 1 & j contains 2, printing 1 2.
+output:
+$ javac Output.java
+$ java Output
+1 2
+
+
+
+
+Which is true?
+A. "X extends Y" is correct if and only if X is a class and Y is an interface.
+B. "X extends Y" is correct if and only if X is a interface and Y is a class.
+C. "X extends Y" is correct if X and Y are either both classes or both interface.
+D. "X extends Y" is correct for all combinations of X and Y being classes and/or interfaces.
+Correct Answer : OPTION C, 'X extends Y' is correct if X and Y are either both classes or both interface.
+
+
+
+Which is not a valid statement based on given code?
+class A{}
+class B extends A{}
+A. A a = new A();
+B. B a = new B();
+C. A a = new B();
+D. B b = new A();
+Correct Answer : OPTION D, B b = new A(), Child class reference variable cannot refer to Parent class object.
+
+
+
+What can be said about the statement y = (Sub) x, based on given code?
+// Class declarations :
+class Super {}
+class Sub extends Super {}
+ 
+// Reference declarations :
+Super x;
+Sub y;
+A. Illegal at compile time.
+B. Legal at compile time, but might be illegal at runtime.
+C. Definitely legal at runtime, but the cast operator (Sub) is not strictly needed.
+D. Definitely legal at runtime, and the cast operator (Sub) is needed.
+Correct Answer : OPTION B, Legal at compile time, but might be illegal at runtime.
+
+
+
+
+
+
+ Which letters will be printed when the given program is run?
+public class MyClass 
+{
+  public static void main(String[] args) 
+  {
+   B b = new C();
+   A a = b;
+   if (a instanceof A) System.out.println("A");
+   if (a instanceof B) System.out.println("B");
+   if (a instanceof C) System.out.println("C");
+   if (a instanceof D) System.out.println("D");
+  }
+}
+ 
+class A {}
+class B extends A {}
+class C extends B {}
+class D extends C {}
+A. A, B, C will be printed.
+B. only A and B will be printed.
+C. only B will be printed.
+D. only C will be printed.
+Correct Answer : OPTION A. A, B, C will be printed.
+
+
+
+
+
+Based on the code which of the following statement is correct.
+class A
+{
+  B b;
+}
+class B{}
+A. class A and B represents IS-A relationship.
+B. class A and B represent HAS-A relationship.
+C. No Relation
+D. class B is member of A
+Correct Answer : OPTION B, class A and B represent HAS-A relationship.
+
+
+
+
+
+
+
+What will be the Output?
+class Animal
+{
+  String name = "animal";
+  String makeNoise()  { return "generic noise"; }
+}
+class Dog extends Animal 
+{
+  String name = "dog";
+  String makeNoise() {  return "bark"; }
+}
+public class Test 
+{
+  public static void main(String[] args)
+  { 
+   Animal an = new Dog();
+   System.out.println(an.name+" "+an.makeNoise());
+  }
+}
+A. animal generic noise
+B. animal bark
+C. dog bark
+D. dog generic noise
+Correct Answer : OPTION B, animal bark. Because Polymorphism is only for instance method not for instance variable.
+
+
+
+
+
+
+
+super keyword in Java is used for?
+A. to refer to immediate child class of a class.
+B. to refer to immediate parent class of a class.
+C. to refer to current class object.
+D. to refer to static member of parent class.
+Correct Answer : OPTION B, super keyword is used to refer to immediate parent class of a class.
+
+
+
+
+
+
+
+Which statement is not correct about an overriden method?
+public class Test { }
+A. Both the method must have same name and same parameter list.
+B. Method overriding is referred to as runtime polymorphism.
+C. Access specifier of overriden method must be more restrictive.
+D. It is possible to override a method by changing its return type.
+Correct Answer : OPTION C, Access specifier of overriden method must be more restrictive. Because Access specifier of overriden method must not be more restrictive than original method(can be less restrictive).
+
+
+
+
+
+
+
+
+
+
+What will be the Output?
+class A
+{
+  public void m1()
+  { System.out.println("A"); }
+}
+public class B extends A
+{
+  void m1()
+  { System.out.println("B"); }
+ 
+ public static void main(String []args)
+ {
+   A a = new B();
+   a.m1();
+ }
+}
+A. A
+B. B
+C. compilation error
+D. runtime error
+Correct Answer : OPTION C, Compilation Error. m1() in B cannot override m1() in A attempting to assign weaker access privileges. m1() is public in A so m1() in B must also be public.
+
+
+
+
+Which operator is used to check object-type at runtime?
+A. ternary operator
+B. instanceof operator
+C. type operator
+D. length operator
+Correct Answer : OPTION B, instanceof operator.
+
+
+
+
+
+
+Argument passed to a program at the run time is stored in __________.
+A. String array passed to the parameter of main() method.
+B. Integer array passed to the parameter of main() method.
+C. Object array passed to the parameter of main() method.
+D. String array passed to the parameter of public class constructor.
+Correct Answer : OPTION A, String array passed to the parameter of main() method. The command line argument is the argument passed to a program at the time when you run it. To access the command-line argument inside a java program is quite easy, they are stored as string in String array passed to the args parameter of main() method.
+
+
+
+
+
+
+Predict Output, if the below code is run with given command?
+Command Line : java myprog good morning everyone
+
+public class myprog
+{ 
+   public static void main(String argv[])
+   { 
+     System.out.println(argv[1]) 
+   }
+}
+A. myprog
+B. good
+C. morning
+D. everyone
+Correct Answer : OPTION C, morning
+
+
+
+
+
+ Multiple inheritance is not supported in Java because?
+A. To remove ambiguity and provide more maintainable and clear design.
+B. Java is a Object oriented language.
+C. Multiple inheritance is not an important feature.
+D. All of above
+Correct Answer : OPTION A, To remove ambiguity and provide more maintainable and clear design.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

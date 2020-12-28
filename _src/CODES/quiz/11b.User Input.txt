@@ -1,0 +1,35 @@
+ Which of these is used to read a string from the input stream?
+a) get()
+b) getLine()
+c) read()
+d) readLine()
+View Answer
+
+Answer: c
+Explanation: None.
+
+
+. What is the output of this program if input given is “abc’def/’egh”?
+
+    class Input_Output {
+        public static void main(String args[]) throws IOException {	 
+            char c;
+            BufferedReader obj = new BufferedReader(new InputStreamReader(System.in));
+            do {
+                c = (char) obj.read();
+	        System.out.print(c);
+            } while(c != '\'');
+        }
+    }
+a) abc’
+b) abcdef/’
+c) abc’def/’egh
+d) abcqfghq
+View Answer
+
+Answer: a
+Explanation: \’ is used for single quotes that is for representing ‘ .
+Output:
+$ javac Input_Output.java
+$ java Input_Output
+abc’
